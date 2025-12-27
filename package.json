@@ -1,9 +1,9 @@
 {
-  "name": "project-group-14",
+  "name": "Invitation",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://aleksandrovich-anastasia.github.io/project-group-14/",
+  "homepage": "https://aleksandrovich-anastasia.github.io/Invitation/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

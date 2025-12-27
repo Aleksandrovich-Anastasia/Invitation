@@ -1,0 +1,25 @@
+.card2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.card2 .text {
+  width: 250px;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.section-card2 {
+}
+.card2-img {
+  position: absolute;
+  left: 50%;
+  top: -60%;
+  transform: translateX(-50%) rotate(90deg);
+  z-index: 5;
+}

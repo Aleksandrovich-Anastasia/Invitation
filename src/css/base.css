@@ -1,6 +1,6 @@
 :root {
-  --font-family: 'Raleway', sans-serif;
-  --second-family: 'IBM Plex Sans', sans-serif;
+  --font-family: 'Alegreya SC', sans-serif;
+  --second-family: 'Great Vibes', sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,27 +12,71 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-family: 'Alegreya SC', sans-serif;
+  font-weight: 400;
   letter-spacing: -0.02em;
-  color: #080c09;
+  color: #354d37;
   scroll-behavior: smooth;
+  text-align: center;
+  background-color: #fffdf6;
 }
-
+section {
+  margin: 20px auto;
+}
 .section-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+  font-family: 'Great Vibes', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  color: #354d37;
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
+.section-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 .text {
   font-size: 16px;
-  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.text:last-child {
+  margin-bottom: 0;
+}
+/* main спочатку схований */
+.main.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
 }
 
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
+.main.visible {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+.main {
+  max-width: 390px; /* або 360 / 420 — під макет */
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* envelope зникає */
+.envelope-screen.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+/* @media only screen and (min-width: 768px) {
   .section-title {
     font-size: 48px;
   }
@@ -44,6 +88,6 @@ body {
   }
 }
 
-/* Styles for Desktop devices */
+
 @media only screen and (min-width: 1280px) {
-}
+} */

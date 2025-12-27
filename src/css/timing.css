@@ -1,0 +1,110 @@
+.timing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.timing-container {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timing-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: 137px;
+  width: 88px;
+}
+.timing-part:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.timing-part:nth-child(even) {
+  align-self: flex-end;
+}
+.part-title {
+  font-family: 'Great Vibes', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.timing .text {
+  margin: 0;
+}
+.part-time {
+}
+.part-icon {
+}
+.timing-line {
+  position: absolute;
+  top: 40px;
+
+  transform: rotate(-7.16deg);
+}
+.glasses {
+  margin-top: 10px;
+}
+.rings {
+  margin-top: 20px;
+}
+.photo {
+  margin-top: 10px;
+  height: 110px;
+}
+.plate {
+  margin-top: 35px;
+}
+.cake {
+  margin-top: 10px;
+}
+.balls {
+  margin-top: 20px;
+}
+
+.timing-part {
+  position: relative;
+}
+
+/* загальний прихований стан */
+.timing-part h3,
+.timing-part p,
+.timing-part svg {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* напрямки */
+.timing-part h3 {
+  transform: translateX(-40px); /* зліва */
+}
+
+.timing-part p {
+  transform: translateY(30px); /* знизу */
+}
+
+.timing-part svg {
+  transform: translateX(40px); /* справа */
+}
+
+.timing-part.is-visible h3,
+.timing-part.is-visible p,
+.timing-part.is-visible svg {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.timing-part.is-visible h3 {
+  transition-delay: 0s;
+}
+
+.timing-part.is-visible p {
+  transition-delay: 0.15s;
+}
+
+.timing-part.is-visible svg {
+  transition-delay: 0.3s;
+}

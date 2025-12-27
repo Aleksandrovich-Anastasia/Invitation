@@ -1,9 +1,8 @@
 
-import { api } from './api/api.js';
-import './js/header.js';
-import './js/furniture-list';
-import './js/furniture-detail.js';
-import './js/order-modal.js';
-import './js/faq.js';
-import { initFeedback } from './js/feedback.js';
+import './js/envelope.js';
+import './js/base.js';
+import './js/timing.js';
+import './js/dresscode.js';
+import './js/timer.js';
+import './js/finish.js';
 

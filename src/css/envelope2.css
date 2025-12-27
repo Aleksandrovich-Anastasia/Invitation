@@ -1,0 +1,21 @@
+.envelope2 {
+  position: relative;
+}
+.envelope2-svg {
+}
+
+.envelope2-text {
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  width: 164px;
+  transform: translateX(-50%) rotate(-15deg);
+  margin-bottom: 0;
+}
+.icon-telegram {
+  fill: #354d37;
+  position: absolute;
+  top: 180px;
+  left: 150px;
+  transform: translateX(-50%) rotate(-15deg);
+}

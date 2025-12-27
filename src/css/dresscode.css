@@ -1,0 +1,88 @@
+/* ====== Dresscode section ====== */
+
+.dresscode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dresscode .text {
+  width: 314px;
+  text-align: center;
+}
+
+/* ====== Ellipse group ====== */
+
+.ellipse-group {
+  display: flex;
+  width: 372px;
+  margin-bottom: 18px;
+  justify-content: space-between;
+}
+
+/* ====== Ellipses base ====== */
+
+.ellipse {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #c7a546;
+
+  /* start state */
+  opacity: 0;
+  transform: translateY(40px) scale(0.85);
+
+  /* slow & smooth appearance */
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* active state (on scroll) */
+.ellipse.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+
+  /* soft living motion */
+  animation: softPulse 4s ease-in-out infinite;
+}
+
+/* ====== Colors + delays (wave effect) ====== */
+
+.ellipse1 {
+  background-color: #a87967;
+  transition-delay: 0s;
+}
+
+.ellipse2 {
+  background-color: #626240;
+  transition-delay: 0.25s;
+}
+
+.ellipse3 {
+  background-color: #dbc9b1;
+  transition-delay: 0.5s;
+}
+
+.ellipse4 {
+  background-color: #9c5527;
+  transition-delay: 0.75s;
+}
+
+.ellipse5 {
+  background-color: #e9ddcd;
+  transition-delay: 1s;
+}
+
+/* ====== Soft pulse animation ====== */
+
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

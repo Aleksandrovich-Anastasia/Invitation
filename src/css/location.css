@@ -1,0 +1,51 @@
+.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-house {
+  margin-bottom: 18px;
+}
+.location-tittle {
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+.location-btn {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  outline: none;
+  background-color: #354d37;
+  border-radius: 18px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.location-btn::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 2px solid #c7a546;
+  border-radius: 12px;
+  pointer-events: none;
+  animation: pulseBorder 2.5s ease-in-out infinite;
+}
+@keyframes pulseBorder {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}

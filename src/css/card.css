@@ -1,0 +1,89 @@
+.card {
+  position: relative;
+  height: 702px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.section-card {
+  width: 375px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card-text {
+  z-index: 10;
+  height: 100%;
+  padding-top: 140px;
+  padding-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.card-img {
+  position: absolute;
+  top: -800%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 55px;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 3s ease, transform 3s ease;
+}
+.card-title-and {
+  font-size: 55px;
+  color: #c7a546;
+  margin: 0;
+}
+.main.visible .card-title,
+.main.visible .card-date {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card .text {
+  color: #fff;
+  width: 274px;
+}
+.card-date {
+  display: flex;
+  flex-direction: column;
+}
+.card-date .month {
+  position: relative;
+}
+
+/* крапка ПЕРЕД 06 */
+.card-date .month::before {
+  content: '·';
+  display: block;
+  font-size: 50px;
+  line-height: 0;
+
+  color: #c7a546;
+}
+
+/* крапка ПІСЛЯ 06 */
+.card-date .month::after {
+  content: '·';
+  display: block;
+  font-size: 50px;
+  line-height: 0;
+
+  color: #c7a546;
+}
