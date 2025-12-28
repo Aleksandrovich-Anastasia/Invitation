@@ -3,18 +3,21 @@ const modal = document.querySelector('.modal-envelope');
 const main = document.querySelector('.main');
 
 btn.addEventListener('click', () => {
-  // 1. Покажемо main відразу (якщо він був hidden)
   main.classList.remove('hidden');
   main.classList.add('visible');
 
-  // 2. Запускаємо анімацію конверта
-  modal.classList.add('open');
+  // Миттєво ховаємо текст, кнопку і фон
+  modal.classList.add('hide-elements');
 
-  // 3. Після завершення анімації конверта ховаємо модалку
-  modal.addEventListener('transitionend', function handler(e) {
-    if (e.target !== modal) return;
-    modal.removeEventListener('transitionend', handler);
+  // Анімуємо конверт
+  document.querySelector('.convert-top').classList.add('open');
+  document.querySelector('.convert-botton').classList.add('open');
 
+  // Після завершення анімації конверта ховаємо модалку
+  const convertTop = document.querySelector('.convert-top');
+  convertTop.addEventListener('transitionend', function handler(e) {
+    if (e.target !== convertTop) return;
+    convertTop.removeEventListener('transitionend', handler);
     modal.style.display = 'none';
   });
 });

@@ -8,7 +8,6 @@
   align-items: center;
   z-index: 1000;
   overflow: hidden;
-  transition: opacity 1s ease;
 }
 
 /* ОСНОВНИЙ БЛОК */
@@ -29,28 +28,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* обрізаємо частини конверта */
+  overflow: hidden;
 }
 
-/* ВЕРХНЯ ЧАСТИНА */
-.convert-top {
-  position: relative;
-  width: 50vw;
-  max-height: 50vh;
-  object-fit: cover; /* обрізаємо, не стискаємо */
-  z-index: 15;
-  transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1), opacity 3s ease;
-}
-
-/* НИЖНЯ ЧАСТИНА */
+.convert-top,
 .convert-botton {
   position: relative;
   width: 50vw;
   max-height: 50vh;
-  object-fit: cover; /* обрізаємо, не стискаємо */
+  object-fit: cover;
+  z-index: 15;
+  opacity: 1;
+  transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease; /* transform + opacity */
+}
+.convert-top {
+  z-index: 15;
+}
+
+.convert-botton {
   transform: rotate(180deg);
   z-index: 10;
-  transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1), opacity 3s ease;
 }
 
 /* КНОПКА */
@@ -63,6 +60,7 @@
   border: none;
   cursor: pointer;
   z-index: 20;
+  transition: none; /* миттєве зникнення */
 }
 
 .open-btn-img {
@@ -76,16 +74,17 @@
   text-align: center;
   color: #fff;
   z-index: 25;
+  transition: none; /* миттєве зникнення */
 }
 
 .text-container {
-  top: 20%; /* над верхнім конвертом */
+  top: 20%;
   width: 80%;
 }
 
 .envelope-text {
-  bottom: 20%; /* над нижнім конвертом */
-  max-width: 390px; /* фіксована ширина */
+  bottom: 20%;
+  max-width: 390px;
   min-width: 230px;
   left: 50%;
   transform: translateX(-50%);
@@ -110,25 +109,29 @@
   line-height: 1.2;
 }
 
-/* АКТИВНИЙ СТАН (OPEN) */
-/* АКТИВНИЙ СТАН (OPEN) */
-.modal-envelope.open .convert-top {
+/* =========================
+   Анімація конверта
+========================= */
+.convert-top.open {
   transform: translateY(-150%) scale(1.05);
   opacity: 0;
 }
 
-.modal-envelope.open .convert-botton {
+.convert-botton.open {
   transform: translateY(150%) rotate(180deg) scale(1.05);
   opacity: 0;
 }
 
-/* ТЕКСТИ та кнопка */
-.modal-envelope.open .text-container,
-.modal-envelope.open .envelope-text,
-.modal-envelope.open .open-btn,
-.modal-envelope.open {
+/* Миттєве зникнення тексту, кнопки і фону */
+.modal-envelope.hide-elements {
+  background-color: transparent;
+}
+
+.modal-envelope.hide-elements .text-container,
+.modal-envelope.hide-elements .envelope-text,
+.modal-envelope.hide-elements .open-btn {
   opacity: 0;
-  transition: opacity 3s ease;
+  transition: none;
 }
 
 /* =========================
@@ -137,7 +140,7 @@
 @media (max-width: 768px) {
   .convert-top,
   .convert-botton {
-    width: 120vw; /* ширше екрана, обрізається по краях */
+    width: 120vw;
     max-height: 50vh;
   }
   .open-btn-img {
