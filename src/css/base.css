@@ -8,8 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 html {
-  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 body {
   font-family: 'Alegreya SC', sans-serif;
@@ -60,9 +61,7 @@ section {
   transition: opacity 0.5s ease;
 }
 .main {
-  max-width: 390px; /* або 360 / 420 — під макет */
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,19 +74,3 @@ section {
   pointer-events: none;
   transition: opacity 1s ease;
 }
-
-/* @media only screen and (min-width: 768px) {
-  .section-title {
-    font-size: 48px;
-  }
-
-  .text {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-
-
-@media only screen and (min-width: 1280px) {
-} */

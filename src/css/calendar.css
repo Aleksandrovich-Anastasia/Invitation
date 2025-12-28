@@ -1,4 +1,5 @@
 .calendar {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +10,7 @@
 .calendar-day {
   display: flex;
   justify-content: space-between;
-  width: 311px;
+  max-width: 311px;
 }
 .calendar-day {
   width: 295px;
@@ -19,7 +20,7 @@
   fill: #c7a546;
   position: absolute;
   top: 66.7%;
-  left: 74.5%;
+  left: 71.9%;
   z-index: 5;
   animation: pulse 1.6s ease-in-out infinite;
   transform-origin: center;
