@@ -1,8 +1,6 @@
-
-import './js/envelope.js';
-import './js/base.js';
-import './js/timing.js';
-import './js/dresscode.js';
-import './js/timer.js';
-import './js/finish.js';
-
+  await import('./js/envelope.js');
+  await import('./js/base.js');
+  await import('./js/timing.js');
+  await import('./js/dresscode.js');
+  await import('./js/timer.js');
+  await import('./js/finish.js');
