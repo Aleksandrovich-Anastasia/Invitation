@@ -10,7 +10,7 @@
 .calendar-day {
   display: flex;
   justify-content: space-between;
-  max-width: 311px;
+  width: 311px;
 }
 .calendar-day {
   width: 295px;

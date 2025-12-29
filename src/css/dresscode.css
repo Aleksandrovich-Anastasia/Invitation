@@ -75,7 +75,7 @@
 
 /* ====== Soft pulse animation ====== */
 
-@keyframes softPulse {
+/* @keyframes softPulse {
   0% {
     transform: scale(1);
   }
@@ -85,4 +85,4 @@
   100% {
     transform: scale(1);
   }
-}
+} */

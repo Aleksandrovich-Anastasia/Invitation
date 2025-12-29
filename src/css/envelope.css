@@ -1,161 +1,137 @@
-/* ФОН СЕКЦІЇ */
 .modal-envelope {
-  position: fixed;
-  inset: 0;
-  background-color: #354d37;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  overflow: hidden;
+  position: relative;
   height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
   margin: 0;
 }
 
-/* ОСНОВНИЙ БЛОК */
+.modal-envelope.hide-elements {
+  position: fixed;
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
 .envelope {
-  position: relative;
-  width: 100%;
+  background-color: #354d37;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* КНОПКА + КОНВЕРТ */
-.envelope-convert-btn {
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.convert-top,
-.convert-botton {
-  position: relative;
-  width: 50vw;
-  max-height: 50vh;
-  object-fit: cover;
-  z-index: 15;
   opacity: 1;
-  transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease; /* transform + opacity */
-}
-.convert-top {
-  z-index: 15;
 }
 
-.convert-botton {
-  transform: rotate(180deg);
-  z-index: 10;
-}
-
-/* КНОПКА */
-.open-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 20;
-  transition: none; /* миттєве зникнення */
-}
-
-.open-btn-img {
-  max-height: 200px;
-}
-
-/* ТЕКСТ */
-.text-container,
-.envelope-text {
-  position: absolute;
-  text-align: center;
-  color: #fff;
-  z-index: 25;
-  transition: none; /* миттєве зникнення */
+.envelope.hide-elements {
+  position: fixed;
+  opacity: 0;
+  transition: opacity 2s ease-out;
 }
 
 .text-container {
-  top: 20%;
-  width: 80%;
-}
-
-.envelope-text {
-  bottom: 20%;
-  max-width: 390px;
-  min-width: 230px;
+  width: 191px;
+  position: absolute;
+  top: 13.6vh;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 20;
 }
 
-/* Заголовки */
 .envelope-title {
-  font-size: 62px;
-  font-weight: 100;
-  line-height: 0.9;
-  margin-bottom: 14px;
+  font-size: 25px;
+  line-height: 25px;
+  color: #fffdf6;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .envelope-title-curcive {
-  font-family: 'Great Vibes', cursive;
-  font-size: 94px;
-  margin-bottom: 0;
+  font-family: 'Great Vibes', sans-serif;
+  font-size: 64px;
+  line-height: 50px;
+  color: #fffdf6;
+  text-align: center;
+}
+.open-btn {
+  padding: 0;
+  border: none;
+}
+.open-btn-img {
+  height: 133px;
+  position: absolute;
+  top: 45vh;
+  left: calc(50% - 70.35px);
+  z-index: 20;
 }
 
-.envelope-text p {
-  font-size: 26px;
-  line-height: 1.2;
+.envelope-text {
+  font-size: 18px;
+  line-height: 22px;
+  color: #fffdf6;
+  text-align: center;
+  width: 281px;
+  position: absolute;
+  bottom: 16.6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 }
 
-/* =========================
-   Анімація конверта
-========================= */
+.convert-top {
+  width: 889.4px;
+  position: absolute;
+  bottom: 41.09vh;
+  left: calc(50% - 444.7px);
+  z-index: 15;
+}
+
 .convert-top.open {
-  transform: translateY(-150%) scale(1.05);
+  transform: translateY(-300px);
   opacity: 0;
+  transition: opacity 5s ease-out, transform 5s ease-out;
 }
 
 .convert-botton.open {
-  transform: translateY(150%) rotate(180deg) scale(1.05);
+  transform: translateY(300px) rotate(180deg);
   opacity: 0;
+  transition: opacity 5s ease-out, transform 5s ease-out;
 }
 
-/* Миттєве зникнення тексту, кнопки і фону */
-.modal-envelope.hide-elements {
-  background-color: transparent;
+.convert-botton {
+  width: 889.4px;
+  position: absolute;
+  top: 39.58vh;
+  left: calc(50% - 444.7px);
+  z-index: 10;
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.convert-botton.open {
+  animation: maneSection_slideDownThenFade__0rwrv 2s ease-out forwards;
 }
 
 .modal-envelope.hide-elements .text-container,
 .modal-envelope.hide-elements .envelope-text,
 .modal-envelope.hide-elements .open-btn {
   opacity: 0;
-  transition: none;
 }
 
-/* =========================
-   АДАПТИВНІСТЬ
-========================= */
-@media (max-width: 768px) {
+.modal-envelope_two {
+  position: fixed;
+  opacity: 0;
+}
+
+.modal-envelope_two.hide-elements {
+  position: unset;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+@media only screen and (max-width: 890px) {
   .convert-top,
   .convert-botton {
-    width: 120vw;
-    max-height: 50vh;
-  }
-  .open-btn-img {
-    max-width: 160px;
-  }
-  .envelope-title {
-    font-size: 40px;
-  }
-
-  .envelope-title-curcive {
-    font-size: 68px;
-  }
-  .envelope-text p {
-    font-size: 19px;
+    left: 0;
   }
 }
