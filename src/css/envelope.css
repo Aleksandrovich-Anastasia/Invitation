@@ -90,13 +90,17 @@
 .convert-top.open {
   transform: translateY(-300px);
   opacity: 0;
-  transition: opacity 5s ease-out, transform 5s ease-out;
+  transition:
+    opacity 2s ease-out,
+    transform 2s ease-out;
 }
 
 .convert-botton.open {
   transform: translateY(300px) rotate(180deg);
   opacity: 0;
-  transition: opacity 5s ease-out, transform 5s ease-out;
+  transition:
+    opacity 2s ease-out,
+    transform 2s ease-out;
 }
 
 .convert-botton {
