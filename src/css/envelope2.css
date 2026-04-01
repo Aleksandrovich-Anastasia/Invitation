@@ -10,7 +10,9 @@
   margin-bottom: 0;
   transform: translateX(-50%) rotate(-15deg);
 }
-
+.envelope2 .text {
+  margin-top: 20px;
+}
 .icon-telegram {
   fill: #354d37;
   position: absolute;
