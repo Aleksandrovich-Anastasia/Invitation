@@ -83,7 +83,6 @@
   width: 100%;
   position: absolute;
   bottom: 40%;
-  left: 2.5%;
   z-index: 15;
 }
 
@@ -98,7 +97,7 @@
   width: 100%;
   position: absolute;
   top: 40%;
-  left: 2.5%;
+
   z-index: 10;
   opacity: 1;
   transform: rotate(180deg);
@@ -130,10 +129,4 @@
   position: unset;
   opacity: 1;
   transition: opacity 2s ease-out;
-}
-@media only screen and (max-width: 890px) {
-  .convert-top,
-  .convert-botton {
-    left: 0%;
-  }
 }
